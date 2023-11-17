@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Evil Corp/Users/🚀</title>
+</head>
+<body>
+    <table class="table table table-sm table-dark">
+        <thead class="table-primary">
+            <tr class="bg-warning">
+                <!-- <th scope="col">id</th> -->
+                <th scope="col">Name</th>
+                <th scope="col">Users</th>
+                <th scope="col">Password</th>
+                <th scope="col">Images</th>
+                <th scope="col">Option</th>
+                <th scope="col">Option</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for users in users %}
+            <tr>
+                <!-- <th scope="row">{{users[0]}}</th> -->
+                <td>{{users[1]}}</td>
+                <td>{{users[2]}}</td>
+                <td>{{users[3]}}</td>
+                <td>{{users[4]}}</td>
+                <td><a class="btn btn-outline-info" href="/cargar_datos_users/{{users[0]}}/" role="button">UPDATE</a></td>
+                <td><a class="btn btn-outline-danger" href="/delete_users/{{users[0]}}/" role="button">DELETE</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <td><a class="btn btn-warning" href="{{url_for('form')}}" role="button">FORM</a></td>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
